@@ -1,0 +1,79 @@
+<?php
+
+echo "1. Factorial\n";
+echo "2. Números Primos\n";
+echo "3. Números Pares\n";
+echo "4. Tablas de Multiplicar\n";
+echo "Ingresa una opción: ";
+$opc=readline();
+switch($opc){
+
+    case 1;
+        
+        echo "Ingresa un número: ";
+        $variable1=readline();
+        $factorial=1;
+
+        for ($i = 1; $i <= $variable1; $i++) {
+        $factorial *= $i;
+        }
+
+        echo "El Factorial de $variable1 es: " . $factorial;
+
+    break;
+    
+    case 2;
+    
+    echo "Ingresa Un Número: ";
+    $variable2 = readline();
+
+    function esPrimo($variable2) {
+     $contador = 0;
+    for ($i = 1; $i <= $variable2; $i++) {
+        if ($variable2 % $i == 0) {
+            $contador++;
+        }
+    }
+    
+    if ($contador == 2) {
+        return true;
+        } else {
+        return false;
+        }
+    }
+
+    if (esPrimo($variable2)) {
+      echo "$variable2 SÍ es un número primo.";
+    } else {
+     echo "$variable2 NO es un número primo.";
+    }
+    
+    break;
+    
+    case 3;
+    
+    echo "Ingresa un número: ";
+    $variable3=readline();
+
+    if($variable3 %2 == 0){
+       echo "El Número $variable3 es Par";
+    }else{
+        echo "El Número $variable3 es Impar";
+    }
+    
+    break;
+    
+    case 4;
+    
+    echo "Ingresa un número: ";
+    $variable4=readline();
+
+    for($i=1;$i<=10;$i++){
+      echo "$variable4" . "x" . "$i". "=" . ($variable4 * $i) . "\n";
+    }
+    
+    break;
+    
+}
+
+?>
